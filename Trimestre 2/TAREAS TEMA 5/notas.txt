@@ -1,0 +1,20 @@
+Red	11000000.01100100.00001010.00100001
+Subred	11111111.11111111.11111111.11110000 (Los 0 del Host es lo que se cambia por 1) 2 elevado a los 0 -1
+	-----------------------------------
+	11000000.01100100.00001010.00100000
+
+Dirección de RED 192.100.10.32
+Broadcasting 192.100.10.48
+
+
+Subredes necesarias: 14
+Host necesarias: 14
+Dirección de red: 192.10.10.10
+
+CLASE C
+255.255.255.0
+192.10.10.00000000 (Se roba de izquierda a derecha) En este caso 0000/0000 2elevado4 (16) ---> 11110000 (240)
+
+Mascara de red adaptada: 255.255.255.240
+
+
