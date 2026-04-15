@@ -1,0 +1,51 @@
+192.168.1.0
+192.168.15.0
+
+enable
+configure terminal
+hostname R1
+interface fastEthernet 0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+exit
+
+interface fastEthernet 0/1
+ip address 192.168.15.1 255.255.255.0
+no shutdown
+exit
+
+ip dhcp excluded-address 192.168.1.1 192.168.1.5
+ip dhcp excluded-address 192.168.15.1 192.168.15.5
+
+ip dhcp pool LAN5
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1
+dns-server 8.8.8.8
+exit
+
+ip dhcp pool LAN6
+network 192.168.15.0 255.255.255.0
+default-router 192.168.15.1
+dns-server 8.8.8.8
+exit
+
+WPAN - Bluetooth/Infrarojos (IrDA)
+WLAN - Local, piso, planta
+WMAN - Barrio, pueblo, ciudad (WiMax)
+WWAN - Regional, país o conjunto de paises
+
+802.11 (1997) 2.4GHZ - 2 Mbps - 20M Interior - 100M Exterior
+802.11a (1999) 5.7GHZ - 54 Mbps - 35M Interior - 120M Exterior
+802.11b (1999) 2.4GHZ - 11 Mbps - 38M Interior - 140M Exterior (Compatibilidad Legacy)
+802.11g (2003) 2.4GHZ  - 54 Mbps - 38M Interior - 140M Exterior (Legacy + b)
+802.11n (2009) 2.4-5.7GHZ - +450 Mbps - 70M Interior - 250M Exterior (Legacy + a + b + g)
+
+IEEE 802.11 (WLAN) compatible con IEEE 802.3 (Ethernet)
+
+AD Hoc - Conexiones mutuas entre dispositivos sin infraestructuras
+Redes de infraestructuras - Distintas estaciones se conectan a la WLAN a través de un AP. En zonas muy amplias pueden existir varios AP en una misma WLAN
+
+BSS - Conjunto de estaciones (STA) entrelazadas entre sí y el conjunto de servicios que comparten
+IBSS (Independientes) - Formadas por AD Hoc y BSS credas y definidias por los propios AP
+BSSID - Identificador único de red local, es un número de 48 bits. Es la dirección MAC del AP. En AD Hoc es un número generado al azar.
+
